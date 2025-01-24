@@ -1,0 +1,225 @@
+body {
+    font-family: 'Arial', sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #1e0f3d; /* Deep purple background */
+    text-align: center;
+}
+
+.genie-container {
+    background: linear-gradient(145deg, #2c1654, #4b2179); /* Rich purple gradient */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.15); /* Golden glow */
+    margin-top: 50px;
+    border: 1px solid rgba(255, 215, 0, 0.2); /* Subtle gold border */
+}
+
+.title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.title-container h1 {
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    font-size: 0.7rem;
+    color: #ffd700; /* Gold color */
+    font-style: italic;
+    margin-top: -5px;
+}
+
+.question-input {
+    width: 80%;
+    padding: 10px;
+    margin: 20px 0;
+    border: 2px solid #ffd700;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.question-input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.ask-button {
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.ask-button:hover {
+    background-color: #357abd;
+}
+
+.answer {
+    margin-top: 30px;
+    font-size: 18px;
+    color: #fff; /* White text for better readability */
+    font-style: italic;
+    line-height: 1.6;
+}
+
+.help-button-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.help-button {
+    background: linear-gradient(145deg, #ffd700, #daa520); /* Gold gradient */
+    color: #1e0f3d; /* Dark purple text for contrast */
+    border: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+    width: 80%;
+    display: block;
+    font-weight: bold;
+    box-shadow: 0 2px 10px rgba(255, 215, 0, 0.2);
+}
+
+.help-button:hover {
+    background: linear-gradient(145deg, #daa520, #cd9500); /* Darker gold gradient on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+}
+
+.help-button.venmo {
+    background-color: #3D95CE;
+    font-weight: bold;
+}
+
+.help-button.venmo:hover {
+    background-color: #3486bb;
+    transform: translateY(-2px);
+}
+
+.venmo-qr {
+    display: none;
+    margin: 10px auto;
+    max-width: 200px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.venmo-container {
+    margin: 20px auto;
+    max-width: 300px;
+    padding: 20px;
+    background: linear-gradient(145deg, #2c1654, #4b2179);
+    border-radius: 24px;
+    box-shadow: 0 2px 15px rgba(255, 215, 0, 0.2);
+    border: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+.venmo-code {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.venmo-logo {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 32px;
+    color: #008CFF;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 5px;
+}
+
+.venmo-handle {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 20px;
+    color: #ffd700; /* Gold color */
+    margin-bottom: 10px;
+}
+
+.qr-code {
+    position: relative;
+    width: 220px;
+    height: 220px;
+    background: white;
+    padding: 10px;
+    border-radius: 16px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.qr-grid {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    background: black;
+    border-radius: 8px;
+    display: grid;
+    grid-template-columns: repeat(20, 1fr);
+    grid-template-rows: repeat(20, 1fr);
+    gap: 2px;
+    padding: 2px;
+}
+
+.qr-grid::before {
+    content: '';
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    background: white;
+    top: 10px;
+    left: 10px;
+    border-radius: 8px;
+    box-shadow: inset 0 0 0 8px black;
+}
+
+.qr-grid::after {
+    content: '';
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    background: white;
+    bottom: 10px;
+    right: 10px;
+    border-radius: 8px;
+    box-shadow: inset 0 0 0 8px black;
+}
+
+.hidden-genie {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 28px;
+    opacity: 0.15;
+    z-index: 2;
+    background: white;
+    padding: 5px;
+    border-radius: 50%;
+}
+
+/* Make sure other text is visible on dark background */
+p {
+    color: #fff;
+}
+
+h1 {
+    color: #ffd700; /* Gold color */
+} 
